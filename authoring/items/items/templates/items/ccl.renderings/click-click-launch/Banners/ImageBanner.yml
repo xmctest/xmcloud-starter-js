@@ -1,23 +1,18 @@
 ﻿---
-ID: "f767c9ba-4de5-4455-b921-ec158e0762ef"
-Parent: "a71fc5c6-b45f-4c48-b07c-ece3c3ecdccb"
+ID: "d627a749-9606-4b9b-af4c-e4afd0818854"
+Parent: "94761350-44cb-4a88-938b-fd0fc7cbfdd1"
 Template: "04646a89-996f-4ee7-878a-ffdbf1f0ef0d"
-Path: "/sitecore/layout/Renderings/Project/click-click-launch/Site 3/FooterST"
+Path: "/sitecore/layout/Renderings/Project/click-click-launch/Banners/ImageBanner"
 SharedFields:
 - ID: "037fe404-dd19-4bf7-8e30-4dadf68b27b0"
   Hint: componentName
-  Value: FooterST
-- ID: "069a8361-b1cd-437c-8c32-a3be78941446"
-  Hint: Placeholders
-  Value: |
-    {71BB9D4E-0504-4F87-8757-22ADE5BD474C}
-    {E39E27C1-AA01-4BFB-826C-4555D1CDCD16}
+  Value: ImageBanner
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
   Hint: __Icon
-  Value: Office/32x32/document_footer.png
+  Value: Office/32x32/presentation2.png
 - ID: "1a7c85e5-dc0b-490d-9187-bb1dbcb4c72f"
   Hint: Datasource Template
-  Value: "/sitecore/templates/Project/click-click-launch/Sites/Site 3/FooterST/FooterST"
+  Value: "/sitecore/templates/Project/click-click-launch/Sites/Site 3/ImageBanner/ImageBanner"
 - ID: "7d8ae35f-9ed1-43b5-96a2-0a5f040d4e4e"
   Hint: Open Properties after Add
   Value: 0
@@ -26,16 +21,16 @@ SharedFields:
   Value: 0
 - ID: "a77e8568-1ab3-44f1-a664-b7c37ec7810d"
   Hint: Parameters Template
-  Value: "{0BAED4A5-B32D-4327-B36E-441F7C2D0AF7}"
+  Value: "{63C790D8-B726-4223-BECA-CF3945029E50}"
 - ID: "b5b27af1-25ef-405c-87ce-369b3a004016"
   Hint: Datasource Location
-  Value: "query:$site/*[@@name='Data']/*[@@templatename='FooterST Folder']|query:$sharedSites/*[@@name='Data']/*[@@templatename='FooterST Folder']"
+  Value: "query:$site/*[@@name='Data']/*[@@templatename='ImageBanner Folder']|query:$sharedSites/*[@@name='Data']/*[@@templatename='ImageBanner Folder']"
 - ID: "c39a90ce-0035-41bb-90f6-3c8a6ea87797"
   Hint: AddFieldEditorButton
   Value: 
 - ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
   Hint: __Shared revision
-  Value: "ead12c24-c8b9-4c4d-ac0d-e999b4be04ba"
+  Value: "d523baee-8c31-42a8-8ced-7d07603bff44"
 - ID: "e829c217-5e94-4306-9c48-2634b094fdc2"
   Hint: OtherProperties
   Value: IsRenderingsWithDynamicPlaceholders=true
@@ -44,7 +39,7 @@ Languages:
   Fields:
   - ID: "30e85e5d-e00a-4864-b358-7624d511deb4"
     Hint: __Unversioned revision
-    Value: "f8c0830b-95cb-4b3f-b74d-3f400d2975d8"
+    Value: "c3236142-0ed6-4167-a536-0ac0656e0302"
   - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
     Hint: __Display name
     Value: Promo
@@ -53,7 +48,7 @@ Languages:
     Fields:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20250528T214623Z
+      Value: 20250528T062757Z
     - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
       Hint: __Owner
       Value: |
@@ -64,19 +59,19 @@ Languages:
         sitecore\Admin
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "845a64f6-7649-466c-961c-6ccf9a0e2629"
+      Value: "ff57aeff-72a9-438c-a2e2-e09aaaf24fd3"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\Admin
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20250528T214623Z
+      Value: 20250528T062757Z
 - Language: en
   Fields:
   - ID: "30e85e5d-e00a-4864-b358-7624d511deb4"
     Hint: __Unversioned revision
-    Value: "4879620d-1a2f-47eb-9ea8-749a8c3453f1"
+    Value: "07452168-b709-4d3b-95fc-a837bb59a25f"
   Versions:
   - Version: 1
     Fields:
@@ -89,19 +84,19 @@ Languages:
         sitecore\JssImport
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "9aa86d16-d52b-40c4-a06f-08a53e8005ef"
+      Value: "808ce4da-af6d-4891-a9a7-e666f3df2aa0"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\neli.kostadinova@sitecore.com
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20250529T080020Z
+      Value: 20250604T130314Z
 - Language: "ja-JP"
   Fields:
   - ID: "30e85e5d-e00a-4864-b358-7624d511deb4"
     Hint: __Unversioned revision
-    Value: "f8c0830b-95cb-4b3f-b74d-3f400d2975d8"
+    Value: "c3236142-0ed6-4167-a536-0ac0656e0302"
   - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
     Hint: __Display name
     Value: プロモ
@@ -110,7 +105,7 @@ Languages:
     Fields:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20250528T214623Z
+      Value: 20250528T062757Z
     - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
       Hint: __Owner
       Value: |
@@ -121,19 +116,19 @@ Languages:
         sitecore\Admin
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "845a64f6-7649-466c-961c-6ccf9a0e2629"
+      Value: "ff57aeff-72a9-438c-a2e2-e09aaaf24fd3"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\Admin
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20250528T214623Z
+      Value: 20250528T062757Z
 - Language: "zh-CN"
   Fields:
   - ID: "30e85e5d-e00a-4864-b358-7624d511deb4"
     Hint: __Unversioned revision
-    Value: "f8c0830b-95cb-4b3f-b74d-3f400d2975d8"
+    Value: "c3236142-0ed6-4167-a536-0ac0656e0302"
   - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
     Hint: __Display name
     Value: 促销
@@ -142,7 +137,7 @@ Languages:
     Fields:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20250528T214623Z
+      Value: 20250528T062757Z
     - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
       Hint: __Owner
       Value: |
@@ -153,11 +148,11 @@ Languages:
         sitecore\Admin
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "845a64f6-7649-466c-961c-6ccf9a0e2629"
+      Value: "ff57aeff-72a9-438c-a2e2-e09aaaf24fd3"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\Admin
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20250528T214623Z
+      Value: 20250528T062757Z
