@@ -60,6 +60,42 @@ Navigate to the relevant example (e.g., kit-nextjs-article-starter) and start th
 
   - Reuse existing utilities and scripts when possible.
 
+## 🤖 AI-Assisted Development
+
+This repository includes Cursor AI coding agent guidance files to help maintain consistent code quality and follow Sitecore XM Cloud best practices.
+
+### Cursor Rules
+
+The repository contains `.cursor/rules/` directory with AI guidance files:
+
+- **Core Rules** (always applied):
+  - `general.mdc` - Universal coding principles and architecture patterns
+  - `code-style.mdc` - Vibe-coding principles and quality standards
+  - `project-context.mdc` - Repository-specific context and multi-starter architecture
+
+- **Scoped Rules** (applied to specific files):
+  - `javascript.mdc` - JavaScript/TypeScript naming conventions and performance patterns
+  - `sitecore.mdc` - Sitecore XM Cloud development patterns and component guidelines
+  - `nextjs.mdc` - Next.js specific patterns, routing, and API development
+  - `testing.mdc` - Testing strategies for XM Cloud components and integrations
+
+### Using AI Assistance
+
+When using AI coding assistants like Cursor:
+- Rules automatically provide context based on the files you're working with
+- Follow the naming conventions and architectural guidance provided
+- Refer to the rules when uncertain about XM Cloud implementation approaches
+- All starter applications inherit these rules for consistent development
+
+### Contributing to Rules
+
+To improve the AI guidance:
+1. Edit the relevant `.mdc` files in `.cursor/rules/`
+2. Keep rules under 500 lines and focused on specific concerns
+3. Include concrete examples and file references using `@filepath` syntax
+4. Test changes with AI coding assistants to ensure effectiveness
+5. Consider impact across all starter applications
+
 5. 🚀 Submitting a Pull Request
 Once your changes are ready:
 Make sure your branch is up-to-date with upstream/dev and create your PR against the **dev** branch.
