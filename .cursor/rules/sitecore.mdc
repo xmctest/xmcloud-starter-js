@@ -233,6 +233,96 @@ export const InteractiveComponent: React.FC<Props> = (props) => {
 };
 ```
 
+## Content SDK Import Guidelines
+
+SDK Submodule Usage:
+- **Main package**: Use for components and client-side functionality
+- **Submodules**: Only use appropriate submodules for specific contexts
+- **Server-only**: Never import `/config-cli` or `/tools` in client components
+
+### Client-Safe Imports (Components & Client Code)
+
+```typescript
+// ✅ SAFE - Client-side component usage
+import { 
+  Text, 
+  RichText, 
+  Image, 
+  Link,
+  Field, 
+  LinkField, 
+  ImageField,
+  useSitecore,
+  SitecoreProvider,
+  Placeholder 
+} from '@sitecore-content-sdk/nextjs';
+
+// ✅ SAFE - Middleware usage (edge runtime)
+import { 
+  LocalizationMiddleware,
+  RedirectsMiddleware 
+} from '@sitecore-content-sdk/nextjs/middleware';
+```
+
+### Server-Only Imports (Configuration & Build)
+
+```typescript
+// ❌ NEVER in client components
+// ✅ ONLY in server-side contexts (sitecore.config.ts, sitecore.cli.config.ts)
+import { defineConfig } from '@sitecore-content-sdk/nextjs/config';
+import { defineCliConfig } from '@sitecore-content-sdk/nextjs/config-cli';
+import { generateSites, generateMetadata, extractFiles } from '@sitecore-content-sdk/nextjs/tools';
+
+// ✅ ONLY in lib/sitecore-client.ts or server utilities
+import { SitecoreClient, GraphQLRequestClient } from '@sitecore-content-sdk/nextjs/client';
+```
+
+### API Route Imports (Next.js API routes)
+
+```typescript
+// ✅ SAFE - API routes only (/pages/api/ or /app/api/)
+import { SitemapMiddleware, RobotsMiddleware } from '@sitecore-content-sdk/nextjs/middleware';
+import { HealthcheckMiddleware } from '@sitecore-content-sdk/nextjs/monitoring';
+import { 
+  EditingRenderMiddleware, 
+  EditingConfigMiddleware, 
+  FEAASRenderMiddleware,
+  isDesignLibraryPreviewData 
+} from '@sitecore-content-sdk/nextjs/editing';
+
+// ✅ SAFE - Utility functions for page routes
+import { extractPath, handleEditorFastRefresh } from '@sitecore-content-sdk/nextjs/utils';
+```
+
+### Import Context Rules
+
+**Configuration Files**:
+- `sitecore.config.ts`: Use `/config` submodule
+- `sitecore.cli.config.ts`: Use `/config-cli` and `/tools` submodules
+- `next.config.js`: Do not import Content SDK directly
+
+**Component Files**:
+- React components: Main package only (`@sitecore-content-sdk/nextjs`)
+- Never import `/config-cli`, `/tools`, or `/client` in components
+
+**Server Utilities**:
+- `lib/sitecore-client.ts`: Use `/client` submodule for SitecoreClient
+- Utility files: Use appropriate submodules based on context
+
+**Page Files**:
+- Page components: Main package + `/utils` for path utilities
+- API routes: Use `/middleware`, `/editing`, `/monitoring` as needed
+
+```typescript
+// Example: Component file structure
+// ✅ CORRECT
+import { Text, useSitecore } from '@sitecore-content-sdk/nextjs';
+
+// ❌ WRONG - will cause build errors
+import { defineConfig } from '@sitecore-content-sdk/nextjs/config';
+import { SitecoreClient } from '@sitecore-content-sdk/nextjs/client';
+```
+
 ## Development Patterns
 
 Component Development Workflow:
