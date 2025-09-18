@@ -60,30 +60,67 @@ XM Cloud Component Patterns:
 - Use Sitecore field components for proper rendering
 - Handle both editing and preview modes
 - Implement proper error boundaries
+- Handle destructuring, undefined errors and null values in datasource and field values gracefully
 
 ```typescript
 // Good component pattern
+import { Text, Image, useSitecore } from '@sitecore-content-sdk/nextjs';
+
 interface HeroProps {
   fields: {
-    title: Field;
-    subtitle: Field;
-    backgroundImage: Field;
+    data?: {
+      datasource?: {
+        title?: { jsonValue?: Field };
+        subtitle?: { jsonValue?: Field };
+        backgroundImage?: { jsonValue?: Field };
+      };
+    };
   };
 }
 
 export default function Hero({ fields }: HeroProps) {
+  const { page } = useSitecore();
+  const { isEditing } = page.mode;
+
   if (!fields) {
     return <div>Hero content not configured</div>;
   }
 
+  // Handle destructuring errors with safe fallbacks
+  const { data } = fields || {};
+  const { datasource } = data || {};
+  const { title, subtitle, backgroundImage } = datasource || {};
+
   return (
     <section className="hero">
-      {fields.title && <Text field={fields.title} tag="h1" />}
-      {fields.subtitle && <Text field={fields.subtitle} tag="p" />}
-      {fields.backgroundImage && <Image field={fields.backgroundImage} />}
+      {/* Show field components in editing mode even if no content */}
+      {(title?.jsonValue?.value || isEditing) && <Text field={title?.jsonValue} tag="h1" />}
+      {(subtitle?.jsonValue?.value || isEditing) && <Text field={subtitle?.jsonValue} tag="p" />}
+      {(backgroundImage?.jsonValue?.value?.src || isEditing) && (
+        <Image field={backgroundImage?.jsonValue} />
+      )}
     </section>
   );
 }
+```
+
+### Safe Destructuring Examples
+
+```typescript
+// ✅ Safe destructuring with fallbacks
+const { titleRequired, descriptionOptional } = fields || {};
+
+// ✅ Safe nested destructuring
+const { data: { datasource } = {} } = fields || {};
+
+// ✅ Safe field access with optional chaining
+field={fields.data?.datasource?.title?.jsonValue}
+
+// ❌ Unsafe - can throw destructuring errors
+const { title } = fields.data.datasource; // Error if fields.data is null
+
+// ❌ Unsafe - can throw undefined errors  
+field={fields.data.datasource.title.jsonValue} // Error if any part is null/undefined
 ```
 
 ## Error Handling
