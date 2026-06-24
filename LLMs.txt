@@ -1,4 +1,4 @@
-# LLM Guidance for XM Cloud Starter Applications
+# LLM Guidance for XM Cloud Starter Applications -Test
 
 ## Project Context
 XM Cloud Front End Application Starter Kits repository with multiple Next.js and SPA examples for Sitecore XM Cloud development. Each starter demonstrates headless CMS patterns with modern React/TypeScript architecture.
