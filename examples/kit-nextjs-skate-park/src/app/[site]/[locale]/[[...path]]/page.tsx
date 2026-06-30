@@ -61,7 +61,15 @@ export const generateStaticParams = async () => {
       routing.locales.slice()
     );
   }
-  return [];
+  // Next.js 16 requires at least one result
+  // Return a default param for the root page
+  return [
+    {
+      site: sites[0]?.name || 'default',
+      locale: routing.defaultLocale || scConfig.defaultLanguage,
+      path: [],
+    },
+  ];
 };
 // Metadata fields for the page.
 export const generateMetadata = async ({ params }: PageProps) => {
